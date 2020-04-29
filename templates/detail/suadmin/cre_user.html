@@ -1,0 +1,110 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>增加新用户</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">增加</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">必填项</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block;">
+
+                                <div class="form-group">
+                                    <label for="inputName">电话号</label>
+                                    <input type="text" id="inputName" class="form-control" name="telephone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">姓名</label>
+                                    <input type="text" id="inputName" class="form-control" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputStatus">性别</label>
+                                    <select class="form-control custom-select" name="sex">
+                                        <option selected="" disabled="">选择一个</option>
+                                        <option value="1">男</option>
+                                        <option value="0">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">身份证号</label>
+                                    <input type="text" id="inputName" class="form-control" name="id_card">
+                                </div>
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">选填项</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block;">
+                                <div class="form-group">
+                                    <label for="inputName">邮箱</label>
+                                    <input type="text" id="inputName" class="form-control" name="email1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">密码</label>
+                                    <label for="inputName">默认使用123456789，如有需要请修改</label>
+                                    <input type="text" id="inputName" class="form-control" name="password"
+                                           value="123456789">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">再次输入密码</label>
+                                    <input type="text" id="inputName" class="form-control" name="password2"
+                                           value="123456789">
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="" class="btn btn-secondary">刷新</a>
+                        <input type="submit" value="增加新用户" class="btn btn-success float-right">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <p style="color: red">
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+        </p>
+    </div>
+
+{% endblock %}

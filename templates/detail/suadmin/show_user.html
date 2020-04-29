@@ -1,0 +1,150 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>显示所有用户</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="">主页</a></li>
+                            <li class="breadcrumb-item active">显示</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Default box -->
+            <div class="card card-solid">
+                <div class="card-body pb-0">
+                    <div class="row d-flex align-items-stretch">
+                        {% for user in users %}
+                            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                <div class="card bg-light">
+                                    <div class="card-header text-muted border-bottom-0">
+                                        个人详情
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <h2 class="lead"><b>{{ user.name }}</b></h2>
+                                                <p class="text-muted text-sm"><b>详情: </b> Web Designer / UX / Graphic
+                                                    Artist / Coffee Lover </p>
+                                                <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                    <li class="small">
+                                                        <span class="fa-li">
+                                                        <i class="fas fa-lg fa-id-card"></i>
+                                                        </span>
+                                                        身份证号：{{ user.id_card }}
+                                                    </li>
+                                                    <li class="small">
+                                                    <span class="fa-li">
+                                                        <i class="fas fa-lg fa-user"></i>
+                                                        </span>
+                                                        {% if user.sex == '1' %}
+                                                            性别：男
+                                                        {% else %}
+                                                            性别：女
+                                                        {% endif %}
+                                                    </li>
+                                                    <li class="small"><span class="fa-li">
+                                                        <i class="fas fa-lg fa-phone"></i></span>
+                                                        电话号: {{ user.telephone }}
+                                                    </li>
+                                                    <li class="small"><span class="fa-li">
+                                                        <i class="fas fa-lg fa-sign"></i>
+                                                </span>
+                                                        状态: {% if user.is_active == 1 %}
+                                                            正常
+                                                        {% else %}
+                                                            异常
+                                                        {% endif %}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-5 text-center">
+                                                <img src="" alt=""
+                                                     class="img-circle img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="text-right">
+
+                                            <a href="" class="btn btn-sm btn-primary">
+                                                <i class="fas fa-user"></i> 修改
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <nav aria-label="Contacts Page Navigation">
+                        <ul class="pagination justify-content-center m-0">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'detail:superuser:show' %}?p={{ page_obj.previous_page_number }}">上一页</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">上一页</a>
+                                </li>
+                            {% endif %}
+                            {% if left_has_more %}
+                                <li class="page-item"><a class="page-link" href="{% url 'detail:superuser:show' %}?p=1">1</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">...</a></li>
+                            {% endif %}
+
+                            {% for left in left_pages %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'detail:superuser:show' %}?p={{ left }}">{{ left }}</a>
+                                </li>
+                            {% endfor %}
+                            <li class="page-item active"><a class="page-link"
+                                                            href="{% url 'detail:superuser:show' %}?p={{ current_page }}">{{ current_page }}</a>
+                            </li>
+                            {% for right in right_pages %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'detail:superuser:show' %}?p={{ right }}">{{ right }}</a>
+                                </li>
+                            {% endfor %}
+
+
+                            {% if right_has_more %}
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">...</a></li>
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'detail:superuser:show' %}?p={{ page }}">{{ num_pages }}</a>
+                                </li>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                                <li class="page-item"><a class="page-link"
+                                                         href="{% url 'detail:superuser:show' %}?p={{ page_obj.next_page_number }}">下一页</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">下一页</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}
