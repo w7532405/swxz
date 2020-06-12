@@ -1,0 +1,95 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>修改通知</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">修改通知</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <form action="" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">当前通知</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">标题</label>
+                                <p class="form-control">{{ data.advise_title }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">发起人</label>
+                                <p class="form-control">{{ data.advise_username }}</p>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">发起时间</label>
+                                <p class="form-control">{{ data.advise_time }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputClientCompany">内容</label>
+                                <p class="form-control">{{ data.advise_text }}</p>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">修改数据</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <div class="form-group">
+                                <label for="inputName">修改后通知标题</label>
+                                <input type="text" id="inputName" class="form-control" name="title_text">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputName">修改后通知内容</label>
+                                <input type="text" id="inputName" class="form-control" name="text">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{% url 'detail:advise:check_advise' %}" class="btn btn-secondary">取消</a>
+                    <input type="submit" value="修改" class="btn btn-success float-right">
+                </div>
+            </div></form>
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

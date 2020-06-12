@@ -1,0 +1,71 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+<div class="content-wrapper" style="min-height: 1409.14px;">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>显示申办</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">显示申办</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">显示</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            {% for data in datas %}
+                            <div class="card-body" style="display: block;">
+
+                                <div class="form-group">
+                                    <label for="inputName">事务名称</label>
+                                    <p class="form-control">{{ data.title }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">事务提交人</label>
+                                    <p class="form-control">{{ data.username }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">事务提交时间</label>
+                                    <p class="form-control">{{ data.th_time }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">事务文本</label>
+                                    <p class="form-control">{{ data.text }}</p>
+                                </div>
+                            <div class="form-group">
+                                    <label for="inputName">通行证状态</label>
+                                {% if data.status == 1 %}
+                                    <p class="form-control" style="color: green">正常</p>
+                                {% else %}
+                                    <p class="form-control" style="color: red">等待校验/未通过校验</p>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+
+
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}

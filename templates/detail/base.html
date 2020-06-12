@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>管理系统后台登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'common/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'common/css/OverlayScrollbars.min.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1785802_9ahevu2esh5.css">
+    <link rel="stylesheet" href="{% static 'detail/css/base.css' %}">
+    {% block csslink %}
+    {% endblock %}
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<div class="wrapper">
+
+    {#    最上面#}
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{% url 'detail:index' %}" class="nav-link">主页</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">待定</a>
+            </li>
+        </ul>
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
+
+    {#    左面侧框#}
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="{% url 'detail:index' %}" class="brand-link">
+            <span class="brand-text font-weight-light">守望相助</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">您好，{{ user.name }}</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-hospital-user"></i>
+                            <p>
+                                直击疫情
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:zjyq:daytext' %}" class="nav-link">
+                                    <i class="far fa-calendar nav-icon"></i>
+                                    <p>每日打卡</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'detail:zjyq:userqr' %}" class="nav-link">
+                                    <i class="far icon-qrcode-1-copy nav-icon iconfont"></i>
+                                    <p>生成个人信息码</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'detail:zjyq:showday' %}" class="nav-link">
+                                    <i class="far fa-calendar-alt nav-icon"></i>
+                                    <p>查看打卡记录</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-id-card"></i>
+                            <p>
+                                通行证
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:passper:show' %}" class="nav-link">
+                                    <i class="far fa-file nav-icon"></i>
+                                    <p>查看通行证</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'detail:passper:write' %}" class="nav-link">
+                                    <i class="far icon-tianxie iconfont nav-icon"></i>
+                                    <p>通行证申报填写</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas icon-shenbao iconfont"></i>
+                            <p>
+                                事务申办
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:things:write' %}" class="nav-link">
+                                    <i class="far icon-tianxie iconfont nav-icon"></i>
+                                    <p>填写申报</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'detail:things:show' %}" class="nav-link">
+                                    <i class="far fa-file nav-icon"></i>
+                                    <p>查看申报结果</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-camera-retro"></i>
+                            <p>
+                                每日分享
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:dayshare:write' %}" class="nav-link">
+                                    <i class="far fa-share-square nav-icon"></i>
+                                    <p>发布分享</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'detail:dayshare:show' %}" class="nav-link">
+                                    <i class="far icon-pengyouquan iconfont nav-icon"></i>
+                                    <p>查看分享</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <p>
+                                日程安排
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:cal:cal' %}" class="nav-link">
+                                    <i class="far fa-calendar-plus nav-icon"></i>
+                                    <p>查看日历</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-user-plus"></i>
+                                <p>
+                                    超级管理员
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:superuser:create' %}" class="nav-link">
+                                        <i class="far icon-jiahao iconfont nav-icon"></i>
+                                        <p>增加新用户</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:superuser:creates' %}" class="nav-link">
+                                        <i class="far icon-add-3 iconfont nav-icon"></i>
+                                        <p>批量增加新用户</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:superuser:show' %}" class="nav-link">
+                                        <i class="far icon-pencil_stub-copy iconfont nav-icon"></i>
+                                        <p>编辑所有用户</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:passper:check' %}" class="nav-link">
+                                        <i class="far fas fa-id-card nav-icon"></i>
+                                        <p>通行证审核</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:things:check' %}" class="nav-link">
+                                        <i class="far fas fa-file nav-icon"></i>
+                                        <p>事务审核</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:advise:check_advise' %}" class="nav-link">
+                                        <i class="far fas fa-envelope-open-text nav-icon"></i>
+                                        <p>通知推送</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    统计
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:tongji:show' %}" class="nav-link">
+                                        <i class="far fa-chart-bar nav-icon"></i>
+                                        <p>用户统计</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:tongji:zjyq_show' %}" class="nav-link">
+                                        <i class="far fa-chart-bar nav-icon"></i>
+                                        <p>直击疫情统计</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'detail:tongji:show' %}" class="nav-link">
+                                        <i class="far fa-chart-bar nav-icon"></i>
+                                        <p>更多</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            <p>
+                                通知
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{% url 'detail:advise:show' %}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>查看通知</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header"><i class="nav-icon fas fa-user"> 个人功能</i></li>
+                    <li class="nav-item">
+                        <a href="{% url 'user:logout' %}" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <p class="text">退出登录</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'detail:cha_pw' %}" class="nav-link">
+                            <i class="nav-icon fas fa-lock-open"></i>
+                            <p class="text">修改密码</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'detail:show' %}" class="nav-link">
+                            <i class="nav-icon fas fa-user-friends"></i>
+                            <p class="text">查看个人信息</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    {#    右侧正文#}
+    {% block content %}
+
+    {% endblock %}
+
+    {#    底部#}
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2019-2020 <a href="http://www.skylineacg.xyz">天际线SKYLINE</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 0.0.7
+        </div>
+    </footer>
+
+
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+</div>
+
+<script src="{% static 'common/js/jquery.min.js' %}"></script>
+<script src="{% static 'common/js/adminlte.js' %}"></script>
+<script src="{% static 'common/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'common/js/demo.js' %}"></script>
+{% block jslink %}
+{% endblock %}
+</body>
+</html>

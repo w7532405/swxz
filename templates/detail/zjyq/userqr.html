@@ -1,0 +1,70 @@
+{% extends 'detail/base.html' %}
+{% load qr_code %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>健康码</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">健康码</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <div class="card">
+                <div class="card-header ui-sortable-handle" style="cursor: move;">
+                    <h3 class="card-title">
+                        <i class="fas icon-qrcode-1-copy nav-icon iconfont"></i>
+                        健康码详情，请选择
+                    </h3>
+                    <div class="card-tools">
+                        <ul class="nav nav-pills ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#revenue-chart" data-toggle="tab">出行健康码</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#sales-chart" data-toggle="tab">日常健康码</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content p-0">
+                        <!-- Morris chart - Sales -->
+                        <div class="chart tab-pane active" id="sales-chart" style="position: relative; height: 300px;">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class="">
+                                        {% qr_from_text status size="M" %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart tab-pane" id="revenue-chart" style="position: relative; height: 300px;">
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class="">{% qr_from_text status_su size="M" %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.card-body -->
+            </div>
+
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>修改密码</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">修改密码</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-red">
+                            <div class="card-header">
+                                <h3 class="card-title">温馨提示！！！</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block;">
+                                <div class="form-group">
+                                    <p>请输入正确的当前密码</p>
+                                    <p>修改密码组成不能少于6位字符长度，最多不能超过20位字符长度！</p>
+                                    <p>修改完成之后请重新登录</p>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">修改密码</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block;">
+                                <div class="form-group">
+                                    <label for="inputName">请输入当前密码</label>
+                                    <input type="password" id="inputName" maxlength="20" class="form-control"
+                                           name="password0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">请输入修改之后的密码</label>
+                                    <input type="password" id="inputName" maxlength="20" class="form-control"
+                                           name="password1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">再次输入修改之后的密码</label>
+                                    <input type="password" id="inputName" maxlength="20" class="form-control"
+                                           name="password2">
+                                </div>
+                                {% for error in errors %}
+                                    <div class="form-group">
+                                        <p style="color: red">{{ error }}</p>
+                                        <p>将在<span id="sp">3</span>秒后返回主页</p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-12">
+                        <a href="{% url 'detail:index' %}" class="btn btn-secondary">取消</a>
+                        <input type="submit" value="修改用户" class="btn btn-success float-right">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}
+{% block jslink %}
+<script>
+    onload=function () {
+        setInterval(go,1000)
+    };
+    var x=2;
+    function go() {
+
+        if (x>=0){
+            document.getElementById("sp").innerText=x;
+        }else {
+            location.href="{% url 'front:index' %}";
+        }
+        x--;
+    }
+</script>
+{% endblock %}

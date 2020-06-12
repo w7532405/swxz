@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>守望相助首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>这里是守望相助首页</h1>
+<ul>
+    <li>简单功能（暂时，待重写）</li>
+    <li>当前整体版本v.0.0.7</li>
+    <li>开始加功能和写api</li>
+    <li>同时也开始弄小程序</li>
+    <li>管理员、打卡、健康码都完成了</li>
+    <li>5.10 23：00</li>
+    <li><a href="{% url 'user:regist' %}">注册</a></li>
+    <li><a href="{% url 'user:login' %}">登录</a></li>
+    <li><a href="{% url 'user:forget' %}">忘记密码</a></li>
+    <li><a href="{% url 'detail:index' %}">个人详情（只有登录以后才能查看，若未登录，将返回登录页面）</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>修改单用户</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">修改用户</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <form action="" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">当前数据</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">用户姓名</label>
+                                <p class="form-control">{{ person.name }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">用户性别</label>
+                                <p class="form-control">
+                                    {% if person.sex == "0" %}
+                                        女
+                                    {% elif person.sex == "1"%}
+                                        男
+                                    {% endif %} </p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">用户身份证号</label>
+                                <p class="form-control">{{ person.id_card }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputClientCompany">用户电话号</label>
+                                <p class="form-control">{{ person.telephone }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputProjectLeader">用户状态</label>
+                                {% if person.is_active == True %}
+                                    <p class="form-control"> 用户正常</p>
+                                {% elif person.is_active == False %}
+                                    <div class="form-control" style="color: red">用户异常</div>
+                                {% else %}
+                                    <p class="form-control"></p>
+                                {% endif %}
+                            </div>
+                            {% for error in errors %}
+                            <div class="form-group">
+                                <label for="inputClientCompany" style="color: red">{{error}}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">修改数据</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body" style="display: block;">
+                            <div class="form-group">
+                                <label for="inputName">用户姓名</label>
+                                <input type="text" id="inputName" class="form-control" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">用户性别</label>
+                                <select class="form-control custom-select" name="sex">
+                                    <option selected="" disabled="">选择一个</option>
+                                    <option value="1">男</option>
+                                    <option value="0">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">身份证号</label>
+                                <input type="text" id="inputName" class="form-control" name="id_card">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">电话号</label>
+                                <input type="text" id="inputName" class="form-control" name="telephone">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">用户状态</label>
+                                <select class="form-control custom-select" name="is_active">
+                                    <option selected="" disabled="">选择一个</option>
+                                    <option value="1">正常</option>
+                                    <option value="0" style="color: red">禁用</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="{% url 'detail:superuser:show' %}" class="btn btn-secondary">取消</a>
+                    <input type="submit" value="修改用户" class="btn btn-success float-right">
+                </div>
+            </div></form>
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

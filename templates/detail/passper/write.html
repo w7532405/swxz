@@ -1,0 +1,75 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>提交审核</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">提交审核</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <section class="content">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">审核文本</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block;">
+
+                                <div class="form-group">
+                                    <label for="inputName">通行证名称</label>
+                                    <input type="text" id="inputName" class="form-control" name="pass_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">通行证地址</label>
+                                    <input type="text" id="inputName" class="form-control" name="pass_address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">拥有者姓名</label>
+                                    <input type="text" id="inputName" class="form-control" name="user_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">通行证起始时间</label>
+                                    <input type="date" id="inputName" class="form-control" name="user_starttime">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">通行证截至时间</label>
+                                    <input type="date" id="inputName" class="form-control" name="user_stoptime">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputName">通行证截图</label>
+                                    <input type="file" id="inputName" class="form-control-file" name="img">
+                                </div>
+                                {% if result %}
+                                <p style="color: red">{{ result }}</p>
+                                {% endif %}
+
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                        <a href="" class="btn btn-secondary">刷新</a>
+                        <input type="submit" value="提交" class="btn btn-success float-right">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock %}

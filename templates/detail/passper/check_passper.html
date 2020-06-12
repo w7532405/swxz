@@ -1,0 +1,118 @@
+{% extends 'detail/base.html' %}
+{% block csslink %}
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1785802_fb5grfmdcnv.css">
+{% endblock %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1419.6px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>通行证审核</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">主页</a></li>
+                            <li class="breadcrumb-item active">审核</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">通行证审核</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects">
+                        <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 10%">
+                                通行证名称
+                            </th>
+                            <th style="width: 15%">
+                                通行证地址
+                            </th>
+                            <th style="width: 10%">
+                                拥有者姓名
+                            </th>
+                            <th style="width: 9%">
+                                通行证起始时间
+                            </th>
+                            <th style="width: 9%">
+                                通行证截至时间
+                            </th>
+                            <th style="width: 15%" class="text-center">
+                                通行证截图
+                            </th>
+                            <th style="width: 8%">操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for passper in passpers %}
+                            <tr>
+                                <td>
+                                    {{ forloop.counter }}
+                                </td>
+                                <td>
+                                    {{ passper.pass_name }}
+                                </td>
+                                <td>
+                                    {{ passper.pass_address }}
+                                </td>
+                                <td>
+                                    {{ passper.user_name }}
+                                </td>
+                                <td>
+                                    {{ passper.user_starttime }}
+                                </td>
+                                <td>
+                                    {{ passper.user_stoptime }}
+                                </td>
+                                <td class="project-state">
+                                    {{passper.img}}
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-info btn-sm" href="{% url 'detail:passper:check' %}?fin=1&pk={{ passper.id }}">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        通过
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="{% url 'detail:passper:check' %}?fin=0&pk={{ passper.id }}">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        不通过
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}

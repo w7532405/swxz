@@ -1,0 +1,11 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+    <div class="content-wrapper" style="min-height: 1409.14px;">
+    <div>
+        <p>这里是超级管理员生成多用户地方，你可以选择点击以下按钮，生成200条数据</p>
+    </div>
+        <div class="col-12">
+            <a href="{% url 'detail:superuser:creates_re' %}" class="btn btn-secondary">生成200人测试数据</a>
+        </div>
+    </div>
+{% endblock %}

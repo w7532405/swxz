@@ -1,0 +1,81 @@
+{% extends 'detail/base.html' %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>删除单用户</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="">主页</a></li>
+                        <li class="breadcrumb-item active">显示</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title" _msthash="2164786" _msttexthash="4467437">用户</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+
+                    <i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>通知信息</th>
+                            <th>详情</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>标题：</td>
+                            <td>{{ data.advise_title }}</td>
+                        </tr>
+                        <tr>   
+                            <td>发起人：</td>
+                            <td>{{ data.advise_username }}</td>
+                            <tr>
+                                <td>发布时间：</td>
+                                <td>{{ data.advise_time }}</td>
+                            </tr>    
+                            <tr>   <td>文本内容：</td>
+                                <td>{{ data.advise_text }}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="text-right py-0 align-middle">
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="{% url 'detail:advise:del_advise_re' %}?pk={{ data.id }}"
+                                        class="btn btn-sm btn-danger">
+                                        <i class="fas icon-shanchu iconfont"></i> 彻底删除
+                                    </a>
+                                </div>
+                                 </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+{% endblock %}
