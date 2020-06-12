@@ -1,0 +1,31 @@
+<view wx:if="{{is_supper}}"  bindtap="gotianjia">
+    <button class='btn1' open-type='openSetting'>
+      <image class='btnImg' src='/icons/add.png'></image>
+      <view>添加信息</view>
+ </button>
+  </view>
+<view class="item" wx:if="{{is_null}}">
+  <text class="show_bt">当前没有信息</text>
+</view>
+<view wx:if="{{!is_null}}" wx:for="{{xiaoxi}}" wx:key="{{index}}">
+  <view class="item" >
+    <text class="show_bt">通知名称</text>
+    <view class="show_nr">
+      <text>{{item.advise_title}}</text>
+    </view>
+    <text class="show_bt">发起人</text>
+    <view class="show_nr">
+      <text>{{item.advise_username}}</text>
+    </view>
+    <text class="show_bt">发起时间</text>
+    <view class="show_nr">
+      <text>{{item.time}}</text>
+    </view>
+    <text class="show_bt">文章预览</text>
+    <view class="show_nr">
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  
+</view>
+

@@ -1,0 +1,29 @@
+<view>
+  <view class="item" bindtap="goshowall">
+    <view class="title">
+    <image src="/icons/show_all.png"></image>
+    <text>查看所有通行证</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+  <view class="item" bindtap="goxttxz">
+    <view class="title">
+    <image src="/icons/write.png"></image>
+    <text>填写新的通行证</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+  <view wx:if="{{is_supper}}" class="item" bindtap="goshenhe">
+    <view class="title">
+    <image src="/icons/shenhe_tz.png"></image>
+    <text>审核通行证</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/shenhe/shenhe.wxml-->
+<scroll-view scroll-y="true" wx:for="{{infos}}" wx:key="{{index}}">
+  <view class="show_all">
+    <view class="show_image">
+      <image src="{{item.pho_url}}"></image>
+    </view>
+    <view class="show_text">
+      <text>{{item.nick_name}}</text>
+      <text class="show_time">{{item.share_time}}</text>
+      <text>{{item.share_text}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+
+<view class="seed_area">
+  <textarea bindinput="get_sharetext" class="seed_content"></textarea>
+   <button class='btn1' open-type='openSetting'>
+    <image class='btnImg' src='/icons/seed.png'></image>
+    <view>发布</view>
+ </button>
+</view>

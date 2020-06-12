@@ -1,0 +1,58 @@
+/* pages/xguser/xguser.wxss */
+page{
+  background-color: #FFFFFF;
+}
+.head{
+  margin-left: 250rpx;
+  margin-top: 50rpx;
+}
+.body{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 80rpx;
+  border-radius: 20rpx;
+}
+.body text{
+  padding-top: 10rpx;
+  padding-left: 15rpx;
+}
+
+.body_bd{
+  margin-left: 100rpx;
+  margin-right: 100rpx;
+  border: 2rpx gray solid;
+  margin-top: 80rpx;
+}
+.body_bdzh{
+  padding-left: 50rpx;
+  display: flex;
+  flex-direction: row;
+}
+.body_bdzh input{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border: 1rpx gray solid;
+}
+.body_bdmm input{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border: 1rpx gray solid;
+}
+.body_bdmm{
+  padding-left: 50rpx;
+  display: flex;
+  flex-direction: row;
+}
+.end{
+  display: flex;
+  flex-direction: row;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 50rpx;
+}
+.end button{
+  font-size: 32rpx;
+}

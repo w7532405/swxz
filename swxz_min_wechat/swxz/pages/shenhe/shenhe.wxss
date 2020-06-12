@@ -1,0 +1,70 @@
+/* pages/shenhe/shenhe.wxss */
+
+.show_image image{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 10rpx;
+  padding-top: 15rpx;
+  padding-bottom: 5rpx;
+}
+.show_all{
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+  margin-left: 3%;
+  border: 2rpx dashed #000000;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+.show_text{
+  display: flex;
+  flex-direction: column;
+  padding-top: 15rpx;
+  margin-left: 10rpx;
+}
+.show_text text{
+  font-size: 30rpx;
+}
+.show_time{
+  font-size: 30rpx;
+  font-weight: 15rpx;
+  color: 	#C0C0C0;
+}
+.seed_content{
+  width: 90%;
+  margin-left: 5%;
+  background-color: 	#D3D3D3;
+  position: fixed;
+  justify-content: center;
+  bottom: 130rpx;
+  border-radius: 30rpx;
+  padding-left: 20rpx;
+  
+}
+
+
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #888;
+  color: #FFFFFF;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 10rpx;
+  left: 160rpx;
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+}

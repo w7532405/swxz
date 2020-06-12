@@ -1,0 +1,15 @@
+/* pages/jl/jl.wxss */
+.body{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50rpx;
+  margin-top: 100rpx;
+  margin-right: 50rpx;
+  background-color: gray;
+  border-radius: 30rpx;
+}
+.body text{
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 5rpx;
+}

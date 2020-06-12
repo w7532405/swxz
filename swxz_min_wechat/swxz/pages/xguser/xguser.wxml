@@ -1,0 +1,52 @@
+<view class="head">
+  <text>当前用户信息</text>
+</view>
+<view class="body">
+  <text>姓名:{{show_realname}}</text>
+  <text>性别:{{show_sex}}</text>
+  <text>电话号:{{show_telephone}}</text>
+  <text>身份证:{{show_ic_card}}</text>
+  <text>用户状态:{{show_is_active}}</text>
+</view>
+
+<view class="head">
+  <text>修改用户信息</text>
+</view>
+
+<view class="body_bd">
+  <view class="body_bdzh">
+    <text>真实姓名:</text>
+    <input bindinput="getname" placeholder="请输入您的姓名"></input>
+  </view>
+  <view class="body_bdzh">
+    <text>电话:</text>
+    <input bindinput="gettelephone" maxlength="11" placeholder="请输入您的电话号"></input>
+  </view>
+  <view class="body_bdzh">
+    <text>身份证:</text>
+    <input bindinput="getidcard" maxlength="18" placeholder="请输入您的身份证"></input>
+  </view>
+  <view class="body_bdzh">
+    <text>性别:</text>
+     <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view wx:if="{{is_select}}">{{sex_value}}</view>
+        <view wx:if="{{!is_select}}">请选择{{array[index]}}</view>
+    </view>
+  </picker>
+  </view>
+  <view class="body_bdzh">
+    <text>用户状态:</text>
+     <picker  bindchange="bindPickerChange1" value="{{index}}" range="{{array1}}">
+      <view class="picker">
+        <view wx:if="{{is_select1}}">{{is_active_value}}</view>
+        <view wx:if="{{!is_select1}}">请选择{{array1[index]}}</view>
+    </view>
+  </picker>
+  </view>
+</view>
+
+<view class="end">
+  <button bindtap="submit">确定</button>
+  <button bindtap="submit1">取消</button>
+</view>

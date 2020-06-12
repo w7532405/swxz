@@ -1,0 +1,86 @@
+
+.image-tx image{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+  margin-top: 15rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.image-tx{
+  border-radius: 50%;
+}
+.name{
+  display: flex;
+  flex-direction: column;
+}
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.anniu{
+  margin-top: 70rpx;
+  margin-left: 50rpx;
+}
+.hr {
+  width: 100%;
+  height: 15px;
+  background-color: #DCDCDC;
+}
+ 
+.item {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  
+}
+.title image{
+  width: 50rpx;
+  height: 50rpx;
+  padding-top: 5rpx;
+  padding-right: 20rpx;
+}
+.title1{
+  padding-left: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.title1 image{
+  width: 50rpx;
+  height: 50rpx;
+  padding-top: 38rpx;
+  padding-right: 20rpx;
+}
+ 
+.detail2 {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  height: 50px;
+  line-height: 50px;
+  color: #888;
+}
+ 
+.line {
+  border: 1px solid #ccc;
+  opacity: 0.2;
+}
+.button{
+  margin-left: 0em;
+  left: 0rpx;
+  padding-left: 0rpx;
+  text-align: left;
+  background-color: #FFFFFF;
+  font-weight:  bold;
+}

@@ -1,0 +1,42 @@
+<view class="head">
+  <image src="/icons/zuce.png"></image>
+  <text>用户账号注册</text>
+</view>
+
+
+<view class="body_bd">
+  <view class="body_bdzh">
+    <text>真实姓名:</text>
+    <input bindinput="getname" placeholder="请输入您的姓名"></input>
+  </view>
+  <view class="body_bdzh1">
+    <text>电话:</text>
+    <input bindinput="gettelephone" maxlength="11" placeholder="请输入您的电话号"></input>
+  </view>
+  <view class="body_bdzh2">
+    <text>身份证:</text>
+    <input bindinput="getidcard" maxlength="18" placeholder="请输入您的身份证"></input>
+  </view>
+  <view class="body_bdzh">
+    <text class="text1">性别:</text>
+     <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view wx:if="{{is_select}}">{{sex_value}}</view>
+        <view wx:if="{{!is_select}}">请选择{{array[index]}}</view>
+        
+    </view>
+  </picker>
+  </view>
+  <view class="body_bdmm1">
+    <text>密码:</text>
+    <input bindinput="getpassword1" type="password" maxlength="22" placeholder="请输入密码"></input>
+  </view>
+  <view class="body_bdmm">
+    <text>重复密码:</text>
+    <input bindinput="getpassword2" type="password" maxlength="22" placeholder="请再次输入密码"></input>
+  </view>
+</view>
+
+<view class="end">
+  <button bindtap="submit">注册</button>
+</view>

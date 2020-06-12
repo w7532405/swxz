@@ -1,0 +1,21 @@
+<!--pages/ishave/ishave.wxml-->
+<view>
+  <view class="item" bindtap="gohave">
+    <view class="title">
+    <image src="/icons/have.png"></image>
+    <text>有账号</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+  <view class="item" bindtap="gonothave">
+    <view class="title">
+    <image src="/icons/nothave.png"></image>
+    <text>无账号</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+</view>

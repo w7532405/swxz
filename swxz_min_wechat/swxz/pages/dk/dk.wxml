@@ -1,0 +1,52 @@
+<view class="dk">
+  <text>疫情打卡</text>
+</view>
+
+<view class="head">
+ <picker class="pickers" mode='region' bindchange='change'>
+    <view wx:if="{{is_dj}}" class="change">点击选择您的位置</view>
+    <view wx:if="{{!is_dj}}">{{region}}</view>
+  </picker>
+  <view class="adress">
+    <text>详细地址:</text>
+    <input bindinput="getadress" placeholder="请输入详细地址"></input>
+  </view>
+  <view class="adress">
+    <text>是否发热(体温>=37.3):</text>
+    <picker  bindchange="bindPickerChange1" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view wx:if="{{is_select}}">{{fr_value}}</view>
+        <view wx:if="{{!is_select}}">请选择{{array[index]}}</view>
+    </view>
+  </picker>
+  </view>
+  <view class="adress">
+    <text>是否去过疫情地:</text>
+    <picker  bindchange="bindPickerChange2" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view wx:if="{{is_select1}}">{{yq_value}}</view>
+        <view wx:if="{{!is_select1}}">请选择{{array[index]}}</view>
+    </view>
+  </picker>
+  </view>
+  <view class="adress">
+    <text>是否咳嗽:</text>
+    <picker  bindchange="bindPickerChange3" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        <view wx:if="{{is_select2}}">{{ks_value}}</view>
+        <view wx:if="{{!is_select2}}">请选择{{array[index]}}</view>
+    </view>
+  </picker>
+  </view>
+   <view class="adress">
+    <text>其他病例:</text>
+    <input bindinput="getqtbl" placeholder="请输入其他病症"></input>
+  </view>
+  <view wx:if="{{is_dk}}">
+    <text>{{dk_nr}}</text>
+  </view>
+</view>
+
+<view class="anniu">
+  <button bindtap="submit">提交</button>
+</view>

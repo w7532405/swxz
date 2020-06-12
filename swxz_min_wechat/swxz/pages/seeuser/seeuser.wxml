@@ -1,0 +1,27 @@
+<view class="head">
+  <input bindinput="gettelephone" maxlength="11" placeholder="请输入电话号进行查询"></input>
+  <view class="lalalal" bindtap="change">
+  <image src="/icons/sousuo.png"></image>
+  <text >查询</text>
+  </view>
+  
+</view>
+
+<view class="body">
+  <text>姓名:{{realname}}</text>
+  <text>性别:{{sex}}</text>
+  <text>电话号:{{telephone1}}</text>
+  <text>身份证:{{ic_card}}</text>
+  <text>用户状态:{{is_active}}</text>
+</view>
+
+<view class="anniu">
+    <button class='btn1' open-type='openSetting'>
+      <image class='btnImg' src='/icons/xiugai.png'></image>
+      <view>修改</view>
+ </button>
+    <button class='btn1' open-type='openSetting'>
+      <image class='btnImg' src='/icons/shanchu.png'></image>
+      <view>删除</view>
+ </button>
+  </view>

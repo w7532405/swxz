@@ -1,0 +1,77 @@
+<view class="head">
+  <view class="image-tx">
+    <image src="{{avatarUrl}}"></image>
+  </view>
+  <view class="anniu">
+    <button wx:if="{{canIUse}}"
+     open-type="getUserInfo" 
+    bindgetuserinfo="bindGetUserInfo" 
+    >点击登录</button>
+    <block wx:else>
+      <view class="name">
+        <view class="nc">{{nickName}}</view>
+        <view>{{realName}}</view>
+      </view>
+  </block>
+  </view>
+</view>
+  
+  
+
+ 
+<view class="hr"></view>
+<view class='item' bindtap="godetail">
+  <view class="title">
+  <image src="/icons/guanliyuan.png"></image>
+    <text style="font-weight:bolder">个人详情</text>
+  </view>
+  <view class="detail2">
+    <text>></text>
+  </view>
+</view>
+<view class="line"></view>
+ 
+<view class="hr"></view>
+<view class="item" wx:if="{{is_supperson}}" bindtap="gosupperson">
+  <view class="title">
+  <image src="/icons/shezhi.png"></image>
+    <text>管理员</text>
+  </view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line" wx:if="{{is_supperson}}"></view>
+
+<view class="item title2" >
+<view class="title1">
+<image src="/icons/gerenxaingxin.png"></image>
+    <button class="title button" open-type="contact" bindcontact="handleContact">联系管理员</button>
+</view>
+    
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item">
+  <view class="title">
+  <image src="/icons/yijian.png"></image>
+    <text style="font-weight:bolder">意见反馈</text>
+  </view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item">
+  <view class="title">
+  <image src="/icons/shezhi1.png"></image>
+    <text style="font-weight:bolder">设置</text>
+  </view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="hr"></view>
+

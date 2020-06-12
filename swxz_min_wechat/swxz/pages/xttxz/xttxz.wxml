@@ -1,0 +1,25 @@
+<!--pages/xttxz/xttxz.wxml-->
+
+<view>
+  <text class="show_bt">通行证名称</text>
+    <view class="show_nr">
+      <input bindinput="gettitle"></input>
+    </view>
+  <text class="show_bt">通行证地址</text>
+    <view class="show_nr">
+      <input bindinput="getadress"></input>
+    </view>
+  <text class="show_bt">拥有者姓名</text>
+    <view class="show_nr">
+      <input bindinput="getname"></input>
+    </view>
+  <text class="show_bt">通行证起始时间</text>
+    <view class="show_nr">
+      <input bindinput="getstarttime"></input>
+    </view>
+  <text class="show_bt">通行证截止时间</text>
+    <view class="show_nr">
+      <input bindinput="getendtime"></input>
+    </view>
+  <button bindtap="sumbit_tz">提交</button>
+</view>

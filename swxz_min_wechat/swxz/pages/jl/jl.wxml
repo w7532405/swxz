@@ -1,0 +1,11 @@
+<view class="body" wx:for="{{person}}" wx:key="{{index}}">
+ <text>时间:{{item.time}}</text>
+ <!-- <text>省份:</text>
+ <text>市:</text>
+ <text>地区:</text> -->
+ <text>详细地址:{{item.province}},{{item.city}},{{item.area}},{{item.de_addr}}</text>
+ <text>是否发热:{{item.hot}}</text>
+ <text>是否前往疫情地区:{{item.danger_area}}</text>
+ <text>是否咳嗽:{{item.cough}}</text>
+
+</view>

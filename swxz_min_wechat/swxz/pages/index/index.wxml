@@ -1,0 +1,29 @@
+<view>
+  <view class="item" bindtap="godk">
+    <view class="title">
+    <image src="/icons/rbdk.png"></image>
+    <text>日报打卡</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+  <view class="item" bindtap="gojl">
+    <view class="title">
+    <image src="/icons/dkjl.png"></image>
+    <text>打卡记录</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+  <view class="item" bindtap="goewm">
+    <view class="title">
+    <image src="/icons/jkm.png"></image>
+    <text>健康码</text>
+    </view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </view>
+</view>

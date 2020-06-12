@@ -1,0 +1,38 @@
+<view class="head">
+  <view class="image-tx">
+    <image src="{{avatarUrl}}"></image>
+  </view>
+  <view class="anniu">
+    <view class="name">
+      <view class="nc">{{nickName}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="hr"></view>
+<view class="item" wx:if="{{is_supperson}}" bindtap="gosupperson">
+  <view class="title">管理员</view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line" wx:if="{{is_supperson}}"></view>
+<view class="item" bindtap="goadduser">
+  <view class="title">
+  <image src="/icons/danyonghu.png"></image>
+    <text>添加单用户</text>
+  </view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>
+<view class="line"></view>
+<view class="item" bindtap="goseeuser">
+  <view class="title">
+  <image src="/icons/chaknayonghu.png"></image>
+    <text>查看用户</text>
+  </view>
+  <view class="detail2">
+    <text> ></text>
+  </view>
+</view>

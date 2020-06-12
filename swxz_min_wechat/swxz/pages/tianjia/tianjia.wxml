@@ -1,0 +1,12 @@
+<!--pages/tianjia/tianjia.wxml-->
+<view>
+  <text class="show_bt">标题</text>
+    <view class="show_nr">
+      <input bindinput="gettitle"></input>
+    </view>
+  <text class="show_bt">内容</text>
+    <view class="show_nr">
+      <input bindinput="getcontent"></input>
+    </view>
+  <button bindtap="sumbit_tz">提交</button>
+</view>

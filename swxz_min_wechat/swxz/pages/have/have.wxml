@@ -1,0 +1,22 @@
+<view class="head">
+  <text>用户账号绑定</text>
+</view>
+
+
+<view class="body_bd">
+  <view class="body_bdzh">
+    <text>手机号:</text>
+    <input bindinput="getnumber" maxlength="11" placeholder="请输入您的手机号"></input>
+  </view>
+  <view class="body_bdmm">
+    <text>密    码:</text>
+    <input bindinput="getpassword" placeholder="请输入密码"></input>
+  </view>
+</view>
+
+<view class="end">
+  <button class='btn1' open-type='openSetting'>
+      <image class='btnImg' src='/icons/bingding.png'></image>
+      <view>绑定</view>
+ </button>
+ </view>

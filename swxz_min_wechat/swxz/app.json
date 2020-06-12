@@ -1,0 +1,73 @@
+{
+  "pages": [
+    
+    "pages/my/my",
+    "pages/showall/showall",
+    "pages/index/index",
+    "pages/addmore/addmore",
+    "pages/shenhe/shenhe",
+    "pages/tongzhi/tongzhi",
+    "pages/seeuser/seeuser",
+    "pages/jl/jl", 
+    "pages/have/have",
+    "pages/dk/dk",
+    "pages/detail/detail",
+    "pages/adduser/adduser",
+    "pages/nothave/nothave",  
+    "pages/xguser/xguser",
+    "pages/ewm/ewm", 
+    "pages/ishave/ishave",
+    "pages/supperson/supperson",
+    
+    "pages/tongguo/tongguo",
+    "pages/tianjia/tianjia",
+    "pages/xttxz/xttxz",
+    "pages/txshenhe/txshenhe"
+  ],
+  "window": {
+    "backgroundColor":"#000000",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "守望相助",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#2b353d",
+    "color": "#000000",
+    "selectedColor": "#FFFFFF",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "直击疫情",
+      "iconPath": "icons/home_icon1.png",
+      "selectedIconPath": "icons/home_icon.png"
+    },
+    {
+      "pagePath": "pages/tongguo/tongguo",
+      "text": "通行证",
+      "iconPath": "icons/shenhe.png",
+      "selectedIconPath": "icons/shenhe1.png"
+    },
+    {
+      "pagePath": "pages/shenhe/shenhe",
+      "text": "每日分享",
+      "iconPath": "icons/shiwu.png",
+      "selectedIconPath": "icons/shiwu1.png"
+    },
+    {
+      "pagePath": "pages/tongzhi/tongzhi",
+      "text": "通知",
+      "iconPath": "icons/tongzhi.png",
+      "selectedIconPath": "icons/tongzhi1.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "icons/my_icon2.png",
+      "selectedIconPath": "icons/my_icon1.png"
+    }
+
+  ]
+  }, 
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

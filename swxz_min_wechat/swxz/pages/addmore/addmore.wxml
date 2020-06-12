@@ -1,0 +1,4 @@
+<!--pages/addmore/addmore.wxml-->
+<text>pages/addmore/addmore.wxml</text>
+
+<button open-type="contact" bindcontact="handleContact">点击</button>

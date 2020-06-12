@@ -1,0 +1,14 @@
+
+
+<view class="show">
+  <view class="head">
+  <image src="/icons/show_yonghu.png"></image>
+    <text>用户信息</text>
+  </view>
+  <view class="line"></view>
+  <text>姓名:{{realname}}</text>
+  <text>性别:{{sex}}</text>
+  <text>电话号:{{telephone}}</text>
+  <text>身份证:{{ic_card}}</text>
+  <text>用户状态:{{is_active}}</text>
+</view>

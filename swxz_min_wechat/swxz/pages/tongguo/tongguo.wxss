@@ -1,0 +1,40 @@
+/* pages/tongguo/tongguo.wxss */
+page{
+  background-color: 	#DCDCDC;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  width: 96%;
+  margin-left: 2%;
+  background-color: #FFFFFF;
+  margin-top: 45rpx;
+  margin-bottom: 15rpx;
+  border-radius: 20rpx;
+  line-height: 70rpx;
+}
+
+.title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.title image{
+  width: 50rpx;
+  height: 50rpx;
+  padding-top: 10rpx;
+  padding-right: 20rpx;
+}
+ 
+.detail2 {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  padding-top: 10rpx;
+  line-height: 70px;
+  line-height: 50px;
+  color: #888;
+}

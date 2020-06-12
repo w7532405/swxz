@@ -1,0 +1,10 @@
+/* pages/tianjia/tianjia.wxss */
+.show_nr{
+  border: 2rpx solid #000000;
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 10rpx;
+}
+button{
+  margin-top: 50rpx;
+}

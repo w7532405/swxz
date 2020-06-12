@@ -1,0 +1,25 @@
+/* pages/txshenhe/txshenhe.wxss */
+/* pages/showall/showall.wxss */
+.show_all{
+  background-color: 	#D3D3D3;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 50rpx;
+  border-radius: 20rpx;
+}
+.show_nr{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  margin-top: 15rpx;
+  border: 2rpx solid #000000;
+}
+.show_bt{
+  padding-top: 10rpx;
+  margin-left: 30rpx;
+}
+.button{
+  display: flex;
+  flex-direction: row;
+}

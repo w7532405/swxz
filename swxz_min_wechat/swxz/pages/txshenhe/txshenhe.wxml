@@ -1,0 +1,32 @@
+<!--pages/txshenhe/txshenhe.wxml-->
+<view wx:for="{{all_txz}}" wx:key="{{index}}">
+  <view class="show_all">
+    <text class="show_bt">通行证名称</text>
+    <view class="show_nr">
+      <text>{{item.pass_name}}</text>
+    </view>
+    <text class="show_bt">通行证地址</text>
+    <view class="show_nr">
+      <text>{{item.pass_address}}</text>
+    </view>
+    <text class="show_bt">拥有者姓名</text>
+    <view class="show_nr">
+      <text>{{item.user_name}}</text>
+    </view>
+    <text class="show_bt">通行证起始时间</text>
+    <view class="show_nr">
+      <text>{{item.user_starttime}}</text>
+    </view>
+    <text class="show_bt">通行证截止时间</text>
+    <view class="show_nr">
+      <text>{{item.user_stoptime}}</text>
+    </view>
+    <text class="show_bt">通行证状态</text>
+    <view class="show_nr">
+      <text>{{item.final_result}}</text>
+    </view>
+  <view class="button">
+    <button bindtap="agree" data-index="{{index}}">通过</button>
+  </view>
+  </view>
+</view>

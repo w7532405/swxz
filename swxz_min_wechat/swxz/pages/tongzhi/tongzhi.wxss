@@ -1,0 +1,58 @@
+/* pages/tongguo/tongguo.wxss */
+page{
+  background-color: 	#DCDCDC;
+}
+.item {
+  width: 96%;
+  margin-left: 2%;
+  background-color: #FFFFFF;
+  margin-top: 45rpx;
+  margin-bottom: 15rpx;
+  border-radius: 20rpx;
+  line-height: 70rpx;
+}
+ 
+.btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #888;
+  color: #FFFFFF;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+}
+ 
+.detail2 {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  padding-top: 10rpx;
+  line-height: 70px;
+  line-height: 50px;
+  color: #888;
+}
+.show_nr{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  margin-top: 15rpx;
+  border: 2rpx solid #000000;
+}
+.show_bt{
+  padding-top: 10rpx;
+  margin-left: 30rpx;
+}
